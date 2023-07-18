@@ -1,0 +1,5 @@
+black==23.7.0
+click==8.1.5
+pytest
+pylint
+flake8
