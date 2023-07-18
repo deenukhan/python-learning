@@ -1,5 +1,6 @@
 black==23.7.0
 click==8.1.5
 pytest
+pytest-cov
 pylint
-flake8
+ipython
