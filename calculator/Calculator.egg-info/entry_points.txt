@@ -1,0 +1,2 @@
+[console_scripts]
+deenu-cal = calculator.calculator:math
