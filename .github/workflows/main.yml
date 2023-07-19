@@ -15,7 +15,8 @@ jobs:
         python-version: 3.8
     - name: Entering into Calculator Directory
       run: |
-        cd click-library
+        cd /home/runner/work/python-learning/python-learning/click-library
+        ls
     - name: Printing Current Working Directory
       run: |
         pwd
