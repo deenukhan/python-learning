@@ -16,6 +16,9 @@ jobs:
     - name: Entering into Calculator Directory
       run: |
         cd click-library
+    - name: Printing Current Working Directory
+      run: |
+        pwd
     - name: Install dependencies
       run: |
         make install
