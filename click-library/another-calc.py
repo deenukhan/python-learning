@@ -32,16 +32,17 @@ def multiply(a, b):
     result = a * b
     click.echo(f"Result of multiplication: {result}")
 
+
 @math.command()
 @click.argument("a", type=float)
 @click.argument("b", type=float)
 def division(a, b):
     """Multiply two numbers."""
-    try: 
+    try:
         result = a / b
-    except:
-        print("Zero Division Error")
-        
+    except ZeroDivisionError as error:
+        print(f"Zero Division Error : {error}")
+
     click.echo(f"Result of multiplication: {result}")
 
 
