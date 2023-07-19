@@ -13,19 +13,20 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.8
-    - name: Entering into Calculator Directory
-      run: |
-        cd click-library
     - name: Install dependencies
       run: |
+        cd click-library
         make install
     - name: Lint with pylint
       run: |
+        cd click-library
         make lint
     - name: Test with pytest
       run: |
+        cd click-library
         make test
     - name: Format code
       run: |
+        cd click-library
         make format
     
