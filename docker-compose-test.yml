@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  label-studio:
+    image: heartexlabs/label-studio:latest  # Use the latest Label Studio image
+    ports:
+      - "8080:8080"  # Expose Label Studio web interface on port 8080
+    environment:
+      - DJANGO_DB_ENGINE=django.db.backends.postgresql
+      - DJANGO_DB_NAME=labelstudio
+      - DJANGO_DB_USER=labelstudio
+      - DJANGO_DB_PASSWORD=labelstudiopassword
+      - DJANGO_DB_HOST=postgres
+      - DJANGO_DB_PORT=5432
+    volumes:
+      - ./label-studio-data:/label-studio/data  # Persist data outside the container
+
+  postgres:
+    image: postgres:latest  # Use the latest PostgreSQL image
+    environment:
+      - POSTGRES_DB=labelstudio
+      - POSTGRES_USER=labelstudio
+      - POSTGRES_PASSWORD=labelstudiopassword
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data  # Persist PostgreSQL data
+
+networks:
+  default:
+    driver: bridge
+
